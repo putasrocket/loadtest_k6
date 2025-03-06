@@ -1,0 +1,16 @@
+{
+  "name": "k6-example-main",
+  "version": "1.0.0",
+  "main": "k6cidr.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "open:k6": "k6 run world.js",
+    "open:dashboard": "./k6 run --out web-dashboard world.js",
+    "open:output": "docker run --rm -i -p 5665:5665 -v $(pwd):/script ghcr.io/grafana/xk6-dashboard:0.7.2 run --out web-dashboard=export=/script/output.html /script/world.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
